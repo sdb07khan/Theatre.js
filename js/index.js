@@ -1,28 +1,43 @@
 import { getProject, types as t } from "@theatre/core";
 import studio from "@theatre/studio";
 
-if (process.env.NODE_ENV === "development") {
-  studio.initialize();
-}
+studio.initialize();
 
-const proj = getProject("My first project");
-const sheet = proj.sheet("A Sheet");
-const dummy = sheet.object("Some Object", {
-  n: 10,
-  b: false,
-  position: {
-    x: t.number(0, { label: "Horizontal" }),
-  },
-  streetLight: t.stringLiteral(
-    "green",
-    {
-      green: "Green",
-      red: "Red",
-      yellow: "Yellow",
-    },
-    { as: "switch" }
-  ),
+const proj = getProject("Animation Practice");
+const sheet = proj.sheet("Bouncing Box");
+
+const boxObj = sheet.object("Box", {
+  y: 0,
 });
+
+const boxDiv = document.querySelector(".box");
+boxObj.onValuesChange(({ y }) => {
+  boxDiv.style.transform = `translateY(${-y}px) `;
+});
+
+// Control box label and range addition HIGHLIGHT
+// if (process.env.NODE_ENV === "development") {
+//   studio.initialize();
+// }
+
+// const proj = getProject("My first project");
+// const sheet = proj.sheet("A Sheet");
+// const dummy = sheet.object("Some Object", {
+//   n: 10,
+//   b: false,
+//   position: {
+//     x: t.number(0, { label: "Horizontal" }),
+//   },
+//   streetLight: t.stringLiteral(
+//     "green",
+//     {
+//       green: "Green",
+//       red: "Red",
+//       yellow: "Yellow",
+//     },
+//     { as: "switch" }
+//   ),
+// });
 
 //Initial Box Animation HIGHLIGHT
 // window.sheet = sheet;

@@ -45157,27 +45157,41 @@ jiff/jiff.js:
 var _core = require("@theatre/core");
 var _studio = _interopRequireDefault(require("@theatre/studio"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-if ("development" === "development") {
-  _studio.default.initialize();
-}
-var proj = (0, _core.getProject)("My first project");
-var sheet = proj.sheet("A Sheet");
-var dummy = sheet.object("Some Object", {
-  n: 10,
-  b: false,
-  position: {
-    x: _core.types.number(0, {
-      label: "Horizontal"
-    })
-  },
-  streetLight: _core.types.stringLiteral("green", {
-    green: "Green",
-    red: "Red",
-    yellow: "Yellow"
-  }, {
-    as: "switch"
-  })
+_studio.default.initialize();
+var proj = (0, _core.getProject)("Animation Practice");
+var sheet = proj.sheet("Bouncing Box");
+var boxObj = sheet.object("Box", {
+  y: 0
 });
+var boxDiv = document.querySelector(".box");
+boxObj.onValuesChange(function (_ref) {
+  var y = _ref.y;
+  boxDiv.style.transform = "translateY(".concat(-y, "px) ");
+});
+
+// Control box label and range addition HIGHLIGHT
+// if (process.env.NODE_ENV === "development") {
+//   studio.initialize();
+// }
+
+// const proj = getProject("My first project");
+// const sheet = proj.sheet("A Sheet");
+// const dummy = sheet.object("Some Object", {
+//   n: 10,
+//   b: false,
+//   position: {
+//     x: t.number(0, { label: "Horizontal" }),
+//   },
+//   streetLight: t.stringLiteral(
+//     "green",
+//     {
+//       green: "Green",
+//       red: "Red",
+//       yellow: "Yellow",
+//     },
+//     { as: "switch" }
+//   ),
+// });
 
 //Initial Box Animation HIGHLIGHT
 // window.sheet = sheet;

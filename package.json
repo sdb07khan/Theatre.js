@@ -6,7 +6,8 @@
   "scripts": {
     "watch:sass": "node-sass css/style.css -w",
     "devserver": "live-server",
-    "start": "parcel ./index.html"
+    "start": "parcel ./index.html",
+    "build": "parcel build ./index.html"
   },
   "author": "saddab",
   "license": "ISC",
