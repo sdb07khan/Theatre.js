@@ -1,0 +1,22 @@
+{
+  "name": "theatre",
+  "version": "1.0.0",
+  "description": "practice project",
+  "main": "index.js",
+  "scripts": {
+    "watch:sass": "node-sass css/style.css -w",
+    "devserver": "live-server",
+    "start": "parcel ./index.html"
+  },
+  "author": "saddab",
+  "license": "ISC",
+  "devDependencies": {
+    "node-sass": "^9.0.0"
+  },
+  "dependencies": {
+    "@theatre/core": "^0.7.0",
+    "@theatre/studio": "^0.7.0",
+    "parcel": "^2.9.3",
+    "parcel-bundler": "^1.12.5"
+  }
+}
