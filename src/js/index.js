@@ -8,11 +8,14 @@ const sheet = proj.sheet("Bouncing Box");
 
 const boxObj = sheet.object("Box", {
   y: 0,
+  stretch: t.number(1, { nudgeMultiplier: 0.01 }),
 });
 
 const boxDiv = document.querySelector(".box");
-boxObj.onValuesChange(({ y }) => {
-  boxDiv.style.transform = `translateY(${-y}px) `;
+boxObj.onValuesChange(({ y, stretch }) => {
+  boxDiv.style.transform = `translateY(${-y}px) scale(${
+    1 / stretch
+  }, ${stretch})`;
 });
 
 // Control box label and range addition HIGHLIGHT
