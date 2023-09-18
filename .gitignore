@@ -64,5 +64,6 @@ typings/
 dist/
 .cache/
 dist/index.html
+.parcel-cache/
 .parcel-cache/data.mdb
 .parcel-cache/lock.mdb
