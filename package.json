@@ -3,10 +3,10 @@
   "version": "1.0.0",
   "description": "practice project",
   "scripts": {
-    "start": "parcel ./index.html -p 3000 --open",
-    "build:parcel": "parcel build ./index.html --public-url ./ --no-source-maps",
+    "start": "parcel ./src/index.html -p 3000 --open",
+    "build:parcel": "parcel build ./src/index.html --public-url ./ --no-source-maps",
     "build": "npm run clean && npm run build:parcel",
-    "clean": "rm -rf dist/*"
+    "clean": "rm -rf dist .cache .parcel-cache"
   },
   "author": "saddab",
   "license": "ISC",
